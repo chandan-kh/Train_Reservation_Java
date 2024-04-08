@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>E-Trains</title>
+<link rel="stylesheet" href="UserHome_Css.css">
+</head>
+<body>
+	<header>
+        <h1 class="hd">National Ticket Booking Spot - Admin Panel</h1>
+        <img src="train.png" alt="Train Image" class="train-image">
+    </header>
+    <div class="menu">
+            <a href="AdminHome.html">Home</a>
+            <a href="adminviewtrainfwd">View Trains</a>
+            <a href="adminsearchtrainfwd">Search By TrainNo</a>
+            <a href="addtrainfwd">Add Train</a>
+            <a href="cancletrainfwd">Delete Train</a>
+            <a href="updatetrain">Update Train Details</a>
+            <a href="adminlogout">Logout</a>
+    </div>
+	<div class='main'>
+		<p class='menu'> Add Trains </p>
+	</div>
+	<form class="tab" action="adminaddtrain" method="post">
+		<br /> Train Number:<input type="text" name="trainno"><br />
+		<br /> Train Name: <input type="text" name="trainname"><br />
+		<br /> From Station: <input type="text" name="fromstation"><br />
+		<br /> To Station: <input type="text" name="tostation"><br />
+		<br /> Available: <input type="text" name="available"><br />
+		<br /> Fare (INR): <input type="text" name="fare"><br />
+		<br /> <input type="submit" value=" ADD TRAIN ">
+	</form>
+	<br />
+</body>
+</html>
