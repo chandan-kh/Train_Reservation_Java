@@ -158,6 +158,53 @@ public class UserServiceImpl implements UserService {
 	    }
 	    return responseCode;
 	}
+	
+	@Override
+	public String addComplaint(String userEmailId, long trainNo, String fromStn, String toStn, String description) {
+	    String responseCode = ResponseCode.FAILURE.toString();
+	    String query = "INSERT INTO complaints (user_email, train_number, from_station, to_station, description) VALUES(?,?,?,?,?)";
+	    try {
+	        Connection con = DBUtil.getConnection();
+	        PreparedStatement ps = con.prepareStatement(query);
+	        ps.setString(1, userEmailId);
+	        ps.setLong(2, trainNo);
+	        ps.setString(3, fromStn);
+	        ps.setString(4, toStn);
+	        ps.setString(5, description);
+	        int rowsAffected = ps.executeUpdate();
+	        if (rowsAffected > 0) {
+	            responseCode = ResponseCode.SUCCESS.toString();
+	        }
+	        ps.close();
+	    } catch (SQLException | TrainException e) {
+	        responseCode += " : " + e.getMessage();
+	    }
+	    return responseCode;
+	}
+    
+	@Override
+	public String addFood(String userEmailId, long trainNo, String fromStn, String toStn, String food) {
+	    String responseCode = ResponseCode.FAILURE.toString();
+	    String query = "INSERT INTO food (user_email, train_number, from_station, to_station, food) VALUES(?,?,?,?,?)";
+	    try {
+	        Connection con = DBUtil.getConnection();
+	        PreparedStatement ps = con.prepareStatement(query);
+	        ps.setString(1, userEmailId);
+	        ps.setLong(2, trainNo);
+	        ps.setString(3, fromStn);
+	        ps.setString(4, toStn);
+	        ps.setString(5, food);
+	        int rowsAffected = ps.executeUpdate();
+	        if (rowsAffected > 0) {
+	            responseCode = ResponseCode.SUCCESS.toString();
+	        }
+	        ps.close();
+	    } catch (SQLException | TrainException e) {
+	        responseCode += " : " + e.getMessage();
+	    }
+	    return responseCode;
+	}
+
 
 
 	@Override
@@ -172,7 +219,7 @@ public class UserServiceImpl implements UserService {
 	        ResultSet rs = ps.executeQuery();
 	        if (rs.next()) {
 	            customer = new UserBean();
-	            customer.setFName(rs.getString("FNAME")); // Use uppercase column names for MySQL
+	            customer.setFName(rs.getString("FNAME")); 
 	            customer.setLName(rs.getString("LNAME"));
 	            customer.setAddr(rs.getString("ADDR"));
 	            customer.setMailId(rs.getString("MAILID"));

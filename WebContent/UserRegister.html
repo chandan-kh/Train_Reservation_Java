@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>National Ticket Booking Spot - New User Registration</title>
+<title>E-Trains - Ticket Booking </title>
 <style>
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -27,22 +27,25 @@
         text-decoration: none;
         padding: 10px 15px;
         border-radius: 5px;
-        background-color: #4caf50; /* Green menu background color */
+        background-color: #4caf50; 
         transition: background-color 0.3s ease;
     }
     .menu a:hover {
-        background-color: #45a049; /* Darker green on hover */
+        background-color: #45a049; 
     }
-    .tab {
-        max-width: 600px;
+    .content {
+        max-width: 400px;
         margin: 20px auto;
         padding: 20px;
         background-color: #fff; /* White content background color */
         border-radius: 10px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
-    .tab h2 {
-        color: #333;
+    .tab {
+        background-color: #2196f3; /* Blue tab background color */
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
         margin-bottom: 20px;
     }
     .form-group {
@@ -53,15 +56,14 @@
         margin-bottom: 5px;
         color: #333;
     }
-    .form-group input,
-    .form-group select {
-        width: calc(100% - 10px);
+    .form-group input {
+        width: 95%;
         padding: 8px;
         border-radius: 5px;
         border: 1px solid #ccc;
     }
     .form-group input[type="submit"] {
-        background-color: #f44336; /* Red submit button background */
+        background-color: #f44336; 
         color: white;
         cursor: pointer;
     }
@@ -76,7 +78,7 @@
 </head>
 <body>
     <header>
-        <h1>National Ticket Booking Spot</h1>
+        <h1>E-Trains - Ticket Booking </h1>
         <div class="main">
             <span class="menu"><a href="UserLogin.html">Login as User</a></span>
             <span class="menu"><a href="UserRegister.html">New User Register</a></span>
@@ -84,9 +86,9 @@
         </div>
     </header>
     
-    <div class="tab">
-        <h2>New User Registration</h2>
-        <form action="userreg" method="post" enctype="multipart/form-data">
+    <div class="content">
+        <div class="tab">New User Registration</div>
+        <form action="userreg" method="post" class="form">
             <div class="form-group">
                 <label for="mailid">Email Id:</label>
                 <input type="email" id="mailid" name="mailid" placeholder="Enter your emailId" required>
@@ -116,7 +118,7 @@
                 <input type="file" id="userphoto" name="userphoto">
             </div>
             <div class="form-group">
-                <input type="submit" value="I AGREE FOR ALL TERMS & CONDITIONS! REGISTER ME">
+                <input type="submit" value="I AGREE FOR ALL TERMS & CONDITIONS ! REGISTER ME">
             </div>
         </form>
     </div>

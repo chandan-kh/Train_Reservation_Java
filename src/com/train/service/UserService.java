@@ -18,5 +18,9 @@ public interface UserService {
 	public String registerUser(UserBean customer);
 	
 	public UserBean loginUser(String username, String password) throws TrainException;
+	
+	public String addFood(String userEmailId, long trainNo, String fromStn, String toStn, String food) throws TrainException;
+
+    public String addComplaint(String userEmailId, long trainNo, String fromStn, String toStn, String description) throws TrainException;
 
 }

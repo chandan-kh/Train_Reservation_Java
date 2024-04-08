@@ -46,7 +46,7 @@ body {
 .menu {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 7px;
   margin-bottom: 20px;
 }
 
